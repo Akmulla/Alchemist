@@ -11,6 +11,22 @@ public class Character : MonoBehaviour
     public int hp=1;
     Rigidbody2D rb;
     public float speed = 3.0f;
+    protected bool reload_1=false;
+    protected bool reload_2=false;
+
+    protected IEnumerator Reload1(float delay)
+    {
+        reload_1 = true;
+        yield return new WaitForSeconds(delay);
+        reload_1 = false;
+    }
+
+    protected IEnumerator Reload2(float delay)
+    {
+        reload_2 = true;
+        yield return new WaitForSeconds(delay);
+        reload_2 = false;
+    }
 
     public void RotateToPoint(Vector3 point)
     {

@@ -7,6 +7,7 @@ public class Player : Character
     public static Player player;
     //public Vector2 hit_zone;
     public LayerMask enemy_mask;
+    
 
     protected override void Awake()
     {
@@ -26,7 +27,7 @@ public class Player : Character
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         RotateToPoint(mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0))&&(!reload_1))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
             //print(hit.collider);
@@ -34,10 +35,10 @@ public class Player : Character
             {
                 hit.collider.gameObject.GetComponent<Character>().GetHit(1);
             }
-            
+            StartCoroutine(Reload1(char_data.reload_1));
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if ((Input.GetMouseButtonDown(1))&&(!reload_2))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right,100.0f, enemy_mask);
             //print(hit.collider);
@@ -47,9 +48,11 @@ public class Player : Character
                 hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
                 //hit.collider.gameObject.GetComponent<Character>().type
             }
-
+            StartCoroutine(Reload2(char_data.reload_2));
         }
     }
+
+ 
 
     void GetMovement()
     {
