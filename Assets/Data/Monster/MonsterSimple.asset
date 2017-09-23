@@ -9,7 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58549db41c4c79b4fbda13ec959805f0, type: 3}
-  m_Name: MonsterBomber
+  m_Name: MonsterSimple
   m_EditorClassIdentifier: 
+  bottle_data: {fileID: 11400000, guid: d6a1768b871416f43b7d3de5b75e41a9, type: 2}
   hp_base: 1
-  speed_base: 1.5
+  speed_base: 1
+  reload_1: 0
+  reload_2: 0

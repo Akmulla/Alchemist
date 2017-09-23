@@ -57,7 +57,7 @@ public class Player : Character
             //print(hit.collider);
             if (hit.collider != null)
             {
-                BottleHandler.b.GetInBottle(hit.collider.gameObject.GetComponent<Character>().type);
+                BottleHandler.b.GetInBottle(hit.collider.gameObject.GetComponent<Character>().char_data);
                 hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
 
                 //hit.collider.gameObject.GetComponent<Character>().type
@@ -78,7 +78,8 @@ public class Player : Character
         if (hp <= 0)
         {
             //Destroy(gameObject);
-            print("game over");
+            //print("game over");
+            GameController.gc.GameOver();
         }
         UIController.ui.UpdateHearts(hp);
     }

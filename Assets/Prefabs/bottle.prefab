@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 22227648}
   - component: {fileID: 11437194}
   - component: {fileID: 11440904}
+  - component: {fileID: 114042187799646492}
   m_Layer: 5
   m_Name: bottle
   m_TagString: Untagged
@@ -37,7 +38,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ed0caf929ba99944c9372cb03771af4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,3 +92,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122268}
   m_IsPrefabParent: 1
+--- !u!114 &114042187799646492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1fc27cf8e372d74da2d802ef63ed2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle: {fileID: 0}

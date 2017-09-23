@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState { Game,Inventory};
 
@@ -62,5 +63,10 @@ public class GameController : MonoBehaviour
         Time.timeScale = saved_time_scale;
         State = GameState.Game;
         UIController.ui.UpdateUI();
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(0);
     }
 }

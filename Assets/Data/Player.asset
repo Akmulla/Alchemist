@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58549db41c4c79b4fbda13ec959805f0, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  bottle_sprite: {fileID: 0}
+  description1: 
+  description2: 
+  description3: 
   hp_base: 5
   speed_base: 3
   reload_1: 0.8
-  reload_2: 30
+  reload_2: 1

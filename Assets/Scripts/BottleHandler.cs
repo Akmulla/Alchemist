@@ -6,7 +6,7 @@ public enum EnemyType { None, Simple, Bomber};
 public class BottleHandler : MonoBehaviour
 {
     public static BottleHandler b;
-    List<EnemyType> bottle;
+    List<CharData> bottle;
 
     void Awake()
     {
@@ -14,23 +14,24 @@ public class BottleHandler : MonoBehaviour
     }
     void Start()
     {
-        bottle = new List<EnemyType>();
+        bottle = new List<CharData>();
     }
 
-    public void ClearBottles()
+    //public void ClearBottles()
+    //{
+    //    bottle[0] = EnemyType.None;
+    //    bottle[1] = EnemyType.None;
+    //}
+
+    public void GetInBottle(CharData type)
     {
-        bottle[0] = EnemyType.None;
-        bottle[1] = EnemyType.None;
+        //if (bottle.Count >= 8)
+        //    bottle.RemoveAt(7);
+        if (bottle.Count <= 8)
+            bottle.Add(type);
     }
 
-    public void GetInBottle(EnemyType type)
-    {
-        if (bottle.Count >= 8)
-            bottle.RemoveAt(7);
-        bottle.Add(type);
-    }
-
-    public List<EnemyType> GetBottles()
+    public List<CharData> GetBottles()
     {
         return bottle;
     }

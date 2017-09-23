@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  char_data: {fileID: 11400000, guid: a439fee1f2c8ee04ebb8eae328b29ad5, type: 2}
+  char_data: {fileID: 11400000, guid: 0d8ac1d43888fc2418a9677b196b8bb4, type: 2}
   tran: {fileID: 0}
   hp: 1
   speed: 3
