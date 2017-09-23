@@ -5,11 +5,16 @@ using UnityEngine;
 public enum EnemyType { None, Simple, Bomber};
 public class BottleHandler : MonoBehaviour
 {
-    EnemyType[] bottle;
+    public static BottleHandler b;
+    List<EnemyType> bottle;
 
+    void Awake()
+    {
+        b = this;
+    }
     void Start()
     {
-        bottle = new EnemyType[2];
+        bottle = new List<EnemyType>();
     }
 
     public void ClearBottles()
@@ -20,6 +25,13 @@ public class BottleHandler : MonoBehaviour
 
     public void GetInBottle(EnemyType type)
     {
+        if (bottle.Count >= 8)
+            bottle.RemoveAt(7);
+        bottle.Add(type);
+    }
 
+    public List<EnemyType> GetBottles()
+    {
+        return bottle;
     }
 }

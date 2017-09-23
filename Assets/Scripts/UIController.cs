@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
     public static UIController ui;
     public GameObject[] heart;
     public GameObject inventory;
+    public GameObject[] bottle;
 
 	void Awake ()
     {
@@ -44,8 +45,14 @@ public class UIController : MonoBehaviour
 
             case GameState.Inventory:
                 inventory.SetActive(true);
+                SetBottles();
                 break;
         }
     }
     
+
+    void SetBottles()
+    {
+
+    }
 }

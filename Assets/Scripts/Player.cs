@@ -57,8 +57,9 @@ public class Player : Character
             //print(hit.collider);
             if (hit.collider != null)
             {
-                
+                BottleHandler.b.GetInBottle(hit.collider.gameObject.GetComponent<Character>().type);
                 hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
+
                 //hit.collider.gameObject.GetComponent<Character>().type
             }
             StartCoroutine(Reload2(char_data.reload_2));
