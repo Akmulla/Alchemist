@@ -87,9 +87,13 @@
     <Compile Include="Assets\Scripts\BottleHandler.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharData.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterBomber.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterSimple.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Pool.cs" />
+    <Compile Include="Assets\Scripts\PoolRef.cs" />
+    <Compile Include="Assets\Scripts\SpawnWaves.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
