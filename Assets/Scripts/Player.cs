@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : Character
+public class Player : Character
 {
-    public Vector2 hit_zone;
+    public static Player player;
+    //public Vector2 hit_zone;
     public LayerMask enemy_mask;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        player = this;
+    }
 
 	void Update ()
     {
@@ -17,7 +24,7 @@ public class PlayerInput : Character
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        character.RotateToPoint(mousePosition);
+        RotateToPoint(mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -29,6 +36,19 @@ public class PlayerInput : Character
             }
             
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right,100.0f, enemy_mask);
+            //print(hit.collider);
+            if (hit.collider != null)
+            {
+                
+                hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
+                //hit.collider.gameObject.GetComponent<Character>().type
+            }
+
+        }
     }
 
     void GetMovement()
@@ -36,6 +56,6 @@ public class PlayerInput : Character
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(h, v, 0);
-        character.Move(movement);
+        Move(movement);
     }
 }

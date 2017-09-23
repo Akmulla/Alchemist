@@ -6,5 +6,5 @@ using UnityEngine;
 public class CharData : ScriptableObject
 {
     public int hp_base;
-    public int speed_base;
+    public float speed_base;
 }

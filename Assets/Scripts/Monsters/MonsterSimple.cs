@@ -13,16 +13,16 @@ public class MonsterSimple : Character
     IEnumerator SpeedCor()
     {
         yield return new WaitForSeconds(10.0f);
-        character.speed += 1.0f;
+        speed += 1.0f;
     }
 
     void Update ()
     {
-        Vector3 target_pos = PlayerInfo.player.tran.position;
-        character.RotateToPoint(target_pos);
+        Vector3 target_pos = Player.player.tran.position;
+        RotateToPoint(target_pos);
 
-        Vector3 movement = PlayerInfo.player.tran.position - tran.position;
-        character.Move(movement);
+        Vector3 movement = Player.player.tran.position - tran.position;
+        Move(movement);
 	}
 
     void OnCollisionEnter2D(Collision2D coll)

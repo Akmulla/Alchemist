@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 4858344057002530}
   - component: {fileID: 50034766193571076}
   - component: {fileID: 58658254683830398}
-  - component: {fileID: 114593393220164490}
   - component: {fileID: 114031143127321628}
   m_Layer: 9
   m_Name: Monster
@@ -114,23 +113,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857148053145136}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29844b94a4e5fc04f9cb86c3e279ff2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   char_data: {fileID: 11400000, guid: a439fee1f2c8ee04ebb8eae328b29ad5, type: 2}
---- !u!114 &114593393220164490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1857148053145136}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7efcafa75343cc49b3cd6058f835c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   speed: 3
 --- !u!212 &212163887036130186
 SpriteRenderer:
