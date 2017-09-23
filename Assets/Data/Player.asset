@@ -13,3 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_base: 5
   speed_base: 3
+  reload_1: 0.8
+  reload_2: 30

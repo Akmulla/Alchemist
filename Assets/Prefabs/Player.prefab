@@ -21,10 +21,8 @@ GameObject:
   - component: {fileID: 4501859316743154}
   - component: {fileID: 50357106762363340}
   - component: {fileID: 58832119398640000}
-  - component: {fileID: 114235685295411170}
-  - component: {fileID: 114884021084507750}
-  - component: {fileID: 114174091530190818}
-  m_Layer: 0
+  - component: {fileID: 114711414903205874}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -39,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4807020466963272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4089810070114640}
   - component: {fileID: 212719620762207486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,32 +136,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.35
---- !u!114 &114174091530190818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1044949030583254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8632f148e89f5fd43af13effbe1999bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tran: {fileID: 4501859316743154}
---- !u!114 &114235685295411170
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1044949030583254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7efcafa75343cc49b3cd6058f835c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 3
---- !u!114 &114884021084507750
+--- !u!114 &114711414903205874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -174,9 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ae271a828b5c240915e7adc2df046c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   char_data: {fileID: 11400000, guid: ba06ad8920600d644a7bfdd0030c5e76, type: 2}
+  tran: {fileID: 0}
+  hp: 1
   speed: 3
-  hit_zone: {x: 0, y: 0}
   enemy_mask:
     serializedVersion: 2
     m_Bits: 512
