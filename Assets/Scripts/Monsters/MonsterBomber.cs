@@ -24,7 +24,8 @@ public class MonsterBomber : Character
             //print("sdfg");
             Player.player.GetHit(2);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        pool_ref.GetPool().Deactivate(gameObject);
     }
 
     void Update()

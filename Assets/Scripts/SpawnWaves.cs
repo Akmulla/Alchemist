@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnWaves : MonoBehaviour
 {
+    [HideInInspector]
     public Pool[] pool;
     public Transform[] spawn_point;
 

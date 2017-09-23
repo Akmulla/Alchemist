@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    protected PoolRef pool_ref;
     public EnemyType type;
     public CharData char_data;
     [HideInInspector]
@@ -48,6 +49,7 @@ public class Character : MonoBehaviour
     protected virtual void Awake()
     {
         tran = GetComponent<Transform>();
+        pool_ref = GetComponent<PoolRef>();
     }
 
 	protected virtual void OnEnable ()
@@ -56,12 +58,13 @@ public class Character : MonoBehaviour
         speed = char_data.speed_base;
 	}
 
-	public void GetHit(int damage)
+	public virtual void GetHit(int damage)
     {
         hp -= damage;
         if (hp<=0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            pool_ref.GetPool().Deactivate(gameObject);
         }
     }
 }

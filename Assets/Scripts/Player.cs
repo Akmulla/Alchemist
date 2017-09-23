@@ -7,7 +7,14 @@ public class Player : Character
     public static Player player;
     //public Vector2 hit_zone;
     public LayerMask enemy_mask;
-    
+    bool reload_shift=false;
+
+    protected IEnumerator ReloadShift(float delay)
+    {
+        reload_shift = true;
+        yield return new WaitForSeconds(delay);
+        reload_shift = false;
+    }
 
     protected override void Awake()
     {
@@ -49,6 +56,11 @@ public class Player : Character
                 //hit.collider.gameObject.GetComponent<Character>().type
             }
             StartCoroutine(Reload2(char_data.reload_2));
+        }
+
+        if ((Input.GetKeyDown( "left shift")) && (!reload_shift))
+        {
+
         }
     }
 

@@ -30,7 +30,8 @@ public class MonsterSimple : Character
         if (coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponent<Character>().GetHit(1);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+           // pool_ref.GetPool().Deactivate(gameObject);
         }
     }
 }
