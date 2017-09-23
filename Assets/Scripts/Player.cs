@@ -20,6 +20,12 @@ public class Player : Character
     {
         base.Awake();
         player = this;
+        
+    }
+    protected override void Start()
+    {
+        base.Start();
+        UIController.ui.UpdateHearts(hp);
     }
 
 	void Update ()
@@ -64,7 +70,17 @@ public class Player : Character
         }
     }
 
- 
+
+    public override void GetHit(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            //Destroy(gameObject);
+            print("game over");
+        }
+        UIController.ui.UpdateHearts(hp);
+    }
 
     void GetMovement()
     {

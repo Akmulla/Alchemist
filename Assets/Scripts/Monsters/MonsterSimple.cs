@@ -34,4 +34,6 @@ public class MonsterSimple : Character
            // pool_ref.GetPool().Deactivate(gameObject);
         }
     }
+
+    
 }

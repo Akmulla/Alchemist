@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         rb.velocity = movement.normalized * speed;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
