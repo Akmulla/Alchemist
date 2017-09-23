@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterBomber : Character
 {
+    public GameObject explosion_circle;
     public LayerMask player;
     protected override void OnEnable()
     {
@@ -19,11 +20,12 @@ public class MonsterBomber : Character
 
     void Explode()
     {
-        if (Physics2D.OverlapCircle(tran.position,3.0f,player))
-        {
-            //print("sdfg");
-            Player.player.GetHit(2);
-        }
+        //if (Physics2D.OverlapCircle(tran.position,3.0f,player))
+        //{
+        //    //print("sdfg");
+        //    Player.player.GetHit(2);
+        //}
+        Instantiate(explosion_circle, tran.position, Quaternion.identity);
         //Destroy(gameObject);
         pool_ref.GetPool().Deactivate(gameObject);
     }
