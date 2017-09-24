@@ -20,9 +20,13 @@ public class BottleHandler : MonoBehaviour
 
     public void AddBottle(BottleData type)
     {
-        if (bottle.Count >= 8)
-            bottle.RemoveAt(7);
-        bottle.Add(type);
+        if (bottle.Count <= 8)
+        {
+            bottle.Add(type);
+            UIController.ui.InitPanelObj();
+        }
+        
+
     }
 
     public void RemoveBottle(BottleData data)
