@@ -27,9 +27,10 @@ public class MonsterSimple : Character
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if ((coll.gameObject.tag == "Player")&&(!reload_1))
         {
             coll.gameObject.GetComponent<Character>().GetHit(1);
+            StartCoroutine(Reload1(char_data.reload_1));
             //Destroy(gameObject);
            // pool_ref.GetPool().Deactivate(gameObject);
         }
