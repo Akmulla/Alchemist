@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharData.cs" />
     <Compile Include="Assets\Scripts\ClickableObject.cs" />
+    <Compile Include="Assets\Scripts\DeathControl.cs" />
     <Compile Include="Assets\Scripts\ExplosionCircle.cs" />
     <Compile Include="Assets\Scripts\FlyingBottle.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
