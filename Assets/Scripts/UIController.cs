@@ -135,7 +135,7 @@ public class UIController : MonoBehaviour
             BottleHandler.b.RemoveBottle(bottle_data[i]);
         }
         BottleHandler.b.AddBottle(new_data);
-        
+        soundmanager.sound_manager.SingleSound(SoundSample.mix);
         SetBottles();
     }
 
@@ -144,8 +144,10 @@ public class UIController : MonoBehaviour
         if (Player.player.CheckIfDefault())
         {
             Player.player.DrinkBottle(bottle);
+            soundmanager.sound_manager.SingleSound(SoundSample.drink);
             BottleHandler.b.RemoveBottle(bottle);
             SetBottles();
+
         }
         
     }

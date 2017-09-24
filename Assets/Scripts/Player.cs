@@ -312,15 +312,21 @@ public class Player : Character
         if (invincible)
             return;
         hp -= damage;
+        
         if (hp <= 0)
         {
-            //Destroy(gameObject);
-            SceneManager.LoadScene(0);
-            print("game over");
+
+            StartCoroutine(gameover());
         }
         UIController.ui.UpdateHearts(hp);
     }
-
+    IEnumerator gameover()
+    {
+        soundmanager.sound_manager.SingleSound(SoundSample.die_player);
+        //Destroy(gameObject);
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("MainScene");
+    }
     void GetMovement()
     {
         float h = Input.GetAxis("Horizontal");

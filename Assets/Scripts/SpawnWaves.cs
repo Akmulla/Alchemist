@@ -16,22 +16,49 @@ public class SpawnWaves : MonoBehaviour
     void Start()
     {
         pool = GetComponentsInChildren<Pool>();
-        StartCoroutine(SpawnCor(spawn_delay));
+
+        StartCoroutine(SpawnCor());
     }
 
-	IEnumerator SpawnCor(float delay)
+    IEnumerator ChngSpawnDelay()
     {
+        yield return new WaitForSeconds(60.0f);
+        while (spawn_delay>=1.0f)
+        {
+            spawn_delay -= 0.1f;
+            yield return new WaitForSeconds(20.0f);
+        }
+    }
+
+	IEnumerator SpawnCor()
+    {
+        float start = Time.time;
         while (true)
         {
             if (GameController.gc.State==GameState.Game)
             {
-                int pool_ind = Random.Range(0, pool.Length);
+                int pool_ind = 0;
+                if (Time.time-start>10.0f)
+                    pool_ind = 0;
+
+                if (Time.time - start > 20.0f)
+                    pool_ind = Random.Range(0, 2);
+
+                if (Time.time - start > 40.0f)
+                    pool_ind = Random.Range(0, 3);
+
+                if (Time.time - start > 60.0f)
+                    pool_ind = Random.Range(0, 4);
+
                 Vector3 pos = spawn_point[Random.Range(0, spawn_point.Length)].position;
 
                 pool[pool_ind].Activate(pos, Quaternion.identity);
                 //GameController.gc.enemy_spawned++;
             }
-            yield return new WaitForSeconds(delay);
+
+
+
+            yield return new WaitForSeconds(spawn_delay);
         }
         
     }

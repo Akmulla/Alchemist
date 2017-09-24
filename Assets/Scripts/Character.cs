@@ -71,6 +71,7 @@ public class Character : MonoBehaviour
             pool_ref.GetPool().Deactivate(gameObject);
             Instantiate(death, tran.position, Quaternion.identity);
             GameController.gc.enemy_killed++;
+            soundmanager.sound_manager.SingleSound(SoundSample.die_enemy);
         }
     }
 }

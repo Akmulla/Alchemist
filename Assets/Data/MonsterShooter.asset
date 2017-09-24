@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MonsterShooter
   m_EditorClassIdentifier: 
   hp_base: 1
-  speed_base: 1
+  speed_base: 0.5
   reload_1: 2
   reload_2: 0
   bottle_data: {fileID: 11400000, guid: 25e11e49f24498a468a5619794b7d054, type: 2}

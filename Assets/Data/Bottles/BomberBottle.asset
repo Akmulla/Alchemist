@@ -14,7 +14,7 @@ MonoBehaviour:
   bottle_sprite: {fileID: 21300000, guid: cac63ced8384dd44291b3b339fd826c5, type: 3}
   abil:
   - ability_type: 1
-    cooldown: 0
+    cooldown: 2
     enemy_type: 2
   - ability_type: 2
     cooldown: 0

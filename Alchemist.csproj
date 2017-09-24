@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\explosivebottle.cs" />
+    <Compile Include="Assets\Preload.cs" />
     <Compile Include="Assets\Scripts\ActionPanelObj.cs" />
     <Compile Include="Assets\Scripts\Bottle.cs" />
     <Compile Include="Assets\Scripts\BottleData.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
+    <Compile Include="Assets\soundmanager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

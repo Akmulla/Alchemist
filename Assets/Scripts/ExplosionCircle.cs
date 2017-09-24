@@ -18,6 +18,7 @@ public class ExplosionCircle : MonoBehaviour
         {
             coll[i].gameObject.GetComponent<Character>().GetHit(1);
         }
+        soundmanager.sound_manager.SingleSound(SoundSample.explosion);
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
