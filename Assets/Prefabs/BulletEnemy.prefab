@@ -22,8 +22,10 @@ GameObject:
   - component: {fileID: 114806989223317334}
   - component: {fileID: 50640530109625750}
   - component: {fileID: 58622067228482972}
+  - component: {fileID: 114531577078826758}
+  - component: {fileID: 114222197013404836}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +109,29 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.26
+--- !u!114 &114222197013404836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057895171818620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdc5ba618b6e0f4b953601f31ab26bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: Player
+--- !u!114 &114531577078826758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057895171818620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00efce4345c200444b6676c8501f0499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114806989223317334
 MonoBehaviour:
   m_ObjectHideFlags: 1

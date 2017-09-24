@@ -8,7 +8,6 @@ public class MoveBullet : MonoBehaviour
     public Transform tran;
     public Rigidbody2D rb;
 
-
     void Update()
     {
         rb.velocity = tran.right.normalized*speed;

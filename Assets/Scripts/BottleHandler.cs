@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType { None, Simple, Bomber};
+public enum EnemyType { None, Simple, Bomber,Shooter};
 public class BottleHandler : MonoBehaviour
 {
     public static BottleHandler b;
