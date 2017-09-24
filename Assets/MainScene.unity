@@ -576,6 +576,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752,
         type: 2}
+    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1207663491}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e436969ac65a1043b85290cd5d2e0e5, type: 2}
   m_IsPrefabParent: 0
@@ -639,7 +644,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2495,7 +2500,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2915,6 +2920,7 @@ MonoBehaviour:
   spawn_point:
   - {fileID: 168909759}
   - {fileID: 965915626}
+  spawn_delay: 0
 --- !u!1 &1181261119
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3008,11 @@ MonoBehaviour:
   bottle_data: {fileID: 0}
   code: 49
   sprite_rend: {fileID: 1003363616}
+--- !u!95 &1207663491 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95628383171992090, guid: 8e436969ac65a1043b85290cd5d2e0e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 274612288}
 --- !u!1 &1303549732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,7 +3333,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4968,7 +4979,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

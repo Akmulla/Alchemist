@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : Character
 {
+    public GameObject explosion_circle_player;
+    public Animator anim;
     //public Transform shot_spawn;
     public GameObject flying_bottle;
     public SpriteRenderer sprite_rend;
@@ -46,7 +48,9 @@ public class Player : Character
 
     IEnumerator DrinkCor()
     {
+        anim.enabled = false;
         yield return new WaitForSeconds(10.0f);
+        anim.enabled = true;
         DrinkBottle(player_bottle);
     }
 
@@ -61,6 +65,7 @@ public class Player : Character
         switch (current_bottle.abil[0].enemy_type)
         {
             case EnemyType.None:
+                anim.SetTrigger("Attack");
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
                 //print(hit.collider);
                 if (hit.collider != null)
@@ -71,13 +76,29 @@ public class Player : Character
                 break;
 
             case EnemyType.Simple:
-
+                //anim.SetTrigger("Attack");
+                hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+                //print(hit.collider);
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+                }
                 break;
 
             case EnemyType.Bomber:
+                Instantiate(explosion_circle_player, tran.position, Quaternion.identity);
+                break;
 
+            case EnemyType.Shooter:
+                BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
                 break;
         }
+    }
+
+    IEnumerator Throw()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(flying_bottle, tran.position, tran.rotation);
     }
 
     void Attack2()
@@ -94,16 +115,25 @@ public class Player : Character
 
                 //    //hit.collider.gameObject.GetComponent<Character>().type
                 //}
-                Instantiate(flying_bottle, tran.position, tran.rotation);
+                anim.SetTrigger("Throw");
+                StartCoroutine(Throw());
 
                 break;
 
             case EnemyType.Simple:
-
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+                //print(hit.collider);
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+                }
                 break;
 
             case EnemyType.Bomber:
-
+                Instantiate(explosion_circle_player, tran.position, Quaternion.identity);
+                break;
+            case EnemyType.Shooter:
+                BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
                 break;
         }
     }

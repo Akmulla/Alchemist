@@ -11,11 +11,12 @@ public class SpawnWaves : MonoBehaviour
     [HideInInspector]
     public Pool[] pool;
     public Transform[] spawn_point;
+    public float spawn_delay;
 
     void Start()
     {
         pool = GetComponentsInChildren<Pool>();
-        StartCoroutine(SpawnCor(0.8f));
+        StartCoroutine(SpawnCor(spawn_delay));
     }
 
 	IEnumerator SpawnCor(float delay)
