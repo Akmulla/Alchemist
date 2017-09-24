@@ -119,7 +119,13 @@ public class UIController : MonoBehaviour
 
     public void DrinkBottle(BottleData bottle)
     {
-
+        if (Player.player.CheckIfDefault())
+        {
+            Player.player.DrinkBottle(bottle);
+            BottleHandler.b.RemoveBottle(bottle);
+            SetBottles();
+        }
+        
     }
 
     void SetBottles()

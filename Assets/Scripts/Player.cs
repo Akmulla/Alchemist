@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player : Character
 {
+    public SpriteRenderer sprite_rend;
     public static Player player;
     //public Vector2 hit_zone;
     public LayerMask enemy_mask;
     bool reload_shift=false;
+    public BottleData current_bottle;
+    public BottleData player_bottle;
 
     protected IEnumerator ReloadShift(float delay)
     {
@@ -28,10 +31,37 @@ public class Player : Character
         UIController.ui.UpdateHearts(hp);
     }
 
+    public void DrinkBottle(BottleData bottle)
+    {
+        current_bottle = bottle;
+        sprite_rend.sprite = bottle.char_sprite;
+        if (!CheckIfDefault())
+        {
+            StartCoroutine(DrinkCor());
+        }
+    }
+
+
+    IEnumerator DrinkCor()
+    {
+        yield return new WaitForSeconds(10.0f);
+        DrinkBottle(player_bottle);
+    }
+
 	void Update ()
     {
         GetMouseInput();
         GetMovement();
+    }
+
+    void Attack1()
+    {
+
+    }
+
+    void Attack2()
+    {
+
     }
 
     void GetMouseInput()
@@ -73,7 +103,15 @@ public class Player : Character
 
     public bool CheckIfDefault()
     {
-        return true;
+        if (current_bottle==player_bottle)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+                
     }
 
     public override void GetHit(int damage)

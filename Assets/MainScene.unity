@@ -163,7 +163,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -326,7 +326,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -962,7 +962,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -1326,7 +1326,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -1509,7 +1509,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -1595,9 +1595,12 @@ MonoBehaviour:
   tran: {fileID: 0}
   hp: 1
   speed: 3
+  sprite_rend: {fileID: 409155107}
   enemy_mask:
     serializedVersion: 2
     m_Bits: 512
+  current_bottle: {fileID: 11400000, guid: 421817ec479fbc545ab506464bbd6508, type: 2}
+  player_bottle: {fileID: 11400000, guid: 421817ec479fbc545ab506464bbd6508, type: 2}
 --- !u!58 &1011061372
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2754,7 +2757,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -3427,7 +3430,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
@@ -3541,7 +3544,7 @@ Prefab:
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224993726710252318, guid: cc4f1c3f7b836834ebc80442ca3d87ff,
         type: 2}
