@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FlyingBottle : MonoBehaviour
 {
+    Transform tran;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -12,6 +14,13 @@ public class FlyingBottle : MonoBehaviour
             other.gameObject.GetComponent<Character>().GetHit(1000);
             Destroy(gameObject);
         }
-        
+    }
+    void Awake()
+    {
+        tran = GetComponent<Transform>();
+    }
+    void Update()
+    {
+        tran.Rotate(new Vector3(0.0f, 0.0f, 10.0f * Time.deltaTime));
     }
 }
