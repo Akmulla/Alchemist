@@ -39,10 +39,10 @@ public class Character : MonoBehaviour
 
     public void Move(Vector3 movement)
     {
-        if (movement.magnitude>0.1f)
+        //if (movement.magnitude>0.1f)
         rb.velocity = movement.normalized * speed;
-        else
-            rb.velocity = Vector2.zero;
+        //else
+           // rb.velocity = Vector2.zero;
     }
 
     protected virtual void Start()

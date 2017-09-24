@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : Character
 {
+    public GameObject explosive_bullet;
     public GameObject sayan;
     public GameObject explosion_circle_player;
     public Animator anim;
@@ -16,7 +17,10 @@ public class Player : Character
     bool reload_shift=false;
     public BottleData current_bottle;
     public BottleData player_bottle;
-    List<Ability> passive_abil;
+    List<EnemyType> passive_abil;
+    bool charge = false;
+    bool invincible = false;
+
 
     protected IEnumerator ReloadShift(float delay)
     {
@@ -29,7 +33,8 @@ public class Player : Character
     {
         base.Awake();
         player = this;
-        passive_abil = new List<Ability>();
+        invincible = false;
+        passive_abil = new List<EnemyType>();
     }
     protected override void Start()
     {
@@ -48,7 +53,10 @@ public class Player : Character
             
             for (int i=0;i<bottle.abil.Length;i++)
             {
-
+                if (bottle.abil[i].ability_type==AbilityType.Passive)
+                {
+                    passive_abil.Add(bottle.abil[i].enemy_type);
+                }
             }
             StartCoroutine(DrinkCor());
         }
@@ -69,8 +77,16 @@ public class Player : Character
 
 	void Update ()
     {
-        GetMouseInput();
-        GetMovement();
+        if (GameController.gc.State==GameState.Game)
+        {
+            if (!charge)
+            {
+                GetMouseInput();
+                GetMovement();
+            }
+           
+        }
+        
     }
 
     void Attack1()
@@ -102,16 +118,69 @@ public class Player : Character
                 break;
 
             case EnemyType.Shooter:
-                BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
+                if (passive_abil.Contains(EnemyType.Bomber))
+                {
+                    Instantiate(explosive_bullet, tran.position, tran.rotation);
+                }
+                else
+                {
+                    if (passive_abil.Contains(EnemyType.Simple))
+                    {
+                        BulletPool.bp.player_pool.Activate(tran.position + tran.up * 0.1f, tran.rotation);
+                        BulletPool.bp.player_pool.Activate(tran.position - tran.up * 0.1f, tran.rotation);
+                    }
+                    else
+                    {
+                        BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
+                    }
+                }
+
+
+
+
+                break;
+
+            case EnemyType.Charge:
+                StartCoroutine(Charge());
                 break;
         }
     }
+
+    IEnumerator Charge()
+    {
+        //charge = true;
+        //speed += 10.0f;
+        //yield return new WaitForSeconds(3.0f);
+        //speed -= 10.0f;
+        //charge = false;
+        charge = true;
+
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        RotateToPoint(mousePosition);
+        speed = 10.0f;
+        mousePosition.z = 0.0f;
+
+        //Vector3 movement = mousePosition - tran.position;
+        //Move(movement);
+        for (int i = 0; i < 10; i++)
+        {
+            transform.position = Vector3.Lerp(tran.position, mousePosition, 0.1f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        
+        yield return new WaitForSeconds(0.2f);
+        speed = current_bottle.speed;
+
+        charge = false;
+    }
+
     IEnumerator Sword()
     {
 
         //yield return new WaitForSeconds(0.3f);
         sayan.SetActive(true);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 2.5f, enemy_mask);
         //print(hit.collider);
         if (hit.collider != null)
         {
@@ -163,6 +232,10 @@ public class Player : Character
 
             case EnemyType.Shooter:
                 BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
+                break;
+
+            case EnemyType.Charge:
+                StartCoroutine(Charge());
                 break;
         }
     }
@@ -234,6 +307,10 @@ public class Player : Character
 
     public override void GetHit(int damage)
     {
+        if (charge)
+            return;
+        if (invincible)
+            return;
         hp -= damage;
         if (hp <= 0)
         {
@@ -256,5 +333,22 @@ public class Player : Character
     {
         base.OnEnable();
         sayan.SetActive(false);
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if ((charge)&&(coll.gameObject.tag == "Enemy"))
+        {
+            coll.gameObject.GetComponent<Character>().GetHit(3);
+            //Destroy(gameObject);
+            // pool_ref.GetPool().Deactivate(gameObject);
+        }
+    }
+
+    IEnumerator GetShield()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(1.0f);
+        invincible = false;
     }
 }

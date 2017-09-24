@@ -9,18 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48e978bdc2becb24cb5ccf710099aff3, type: 3}
-  m_Name: PlayerBottle 1
+  m_Name: ChargeBottle
   m_EditorClassIdentifier: 
-  bottle_sprite: {fileID: 21300000, guid: fd9cded77e93a9244be24dc243e32a83, type: 3}
+  bottle_sprite: {fileID: 21300000, guid: 3761a739838641649b8ee1ef062673d6, type: 3}
   abil:
   - ability_type: 1
-    cooldown: 0.7
-    enemy_type: 0
-  - ability_type: 1
-    cooldown: 5
-    enemy_type: 0
-  - ability_type: 1
-    cooldown: 7
-    enemy_type: 0
-  char_sprite: {fileID: 21300000, guid: ea37c0b85990da74f8f8e5e59bb05178, type: 3}
+    cooldown: 3.5
+    enemy_type: 4
+  - ability_type: 2
+    cooldown: 0
+    enemy_type: 4
+  char_sprite: {fileID: 21300000, guid: 0cfbee88c7690c448afb1001b858cb7f, type: 3}
   speed: 3
