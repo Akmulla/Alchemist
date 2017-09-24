@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cce2bc4452d01f4f9827457084c781f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  death: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752, type: 2}
   char_data: {fileID: 11400000, guid: 0d8ac1d43888fc2418a9677b196b8bb4, type: 2}
   tran: {fileID: 0}
   hp: 1

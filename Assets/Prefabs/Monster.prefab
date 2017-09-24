@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29844b94a4e5fc04f9cb86c3e279ff2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  death: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752, type: 2}
   char_data: {fileID: 11400000, guid: a439fee1f2c8ee04ebb8eae328b29ad5, type: 2}
   tran: {fileID: 0}
   hp: 1

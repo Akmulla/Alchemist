@@ -84,16 +84,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bottle.cs" />
+    <Compile Include="Assets\Scripts\BottleData.cs" />
     <Compile Include="Assets\Scripts\BottleHandler.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharData.cs" />
+    <Compile Include="Assets\Scripts\ClickableObject.cs" />
+    <Compile Include="Assets\Scripts\ExplosionCircle.cs" />
+    <Compile Include="Assets\Scripts\FlyingBottle.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterBomber.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterSimple.cs" />
+    <Compile Include="Assets\Scripts\MoveBullet.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerBullet.cs" />
     <Compile Include="Assets\Scripts\Pool.cs" />
     <Compile Include="Assets\Scripts\PoolRef.cs" />
     <Compile Include="Assets\Scripts\SpawnWaves.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
+    <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

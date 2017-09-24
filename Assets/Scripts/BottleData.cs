@@ -8,6 +8,7 @@ public enum AbilityType { None,Active,Passive};
 public struct Ability
 {
     public AbilityType ability_type;
+    public float cooldown;
     public EnemyType enemy_type;
 }
 
