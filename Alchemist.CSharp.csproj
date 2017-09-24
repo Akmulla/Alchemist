@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ActionPanelObj.cs" />
     <Compile Include="Assets\Scripts\Bottle.cs" />
     <Compile Include="Assets\Scripts\BottleData.cs" />
     <Compile Include="Assets\Scripts\BottleHandler.cs" />
