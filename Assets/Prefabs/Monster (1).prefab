@@ -130,11 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cce2bc4452d01f4f9827457084c781f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  death: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752, type: 2}
   char_data: {fileID: 11400000, guid: a439fee1f2c8ee04ebb8eae328b29ad5, type: 2}
   tran: {fileID: 0}
   hp: 1
   speed: 3
+  explosion_circle: {fileID: 0}
   player:
     serializedVersion: 2
     m_Bits: 256

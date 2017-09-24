@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public GameObject death;
     protected PoolRef pool_ref;
-    public EnemyType type;
+    //public EnemyType type;
     public CharData char_data;
     [HideInInspector]
     public Transform tran;
@@ -58,13 +59,14 @@ public class Character : MonoBehaviour
         speed = char_data.speed_base;
 	}
 
-	public virtual void GetHit(int damage)
+    public virtual void GetHit(int damage)
     {
         hp -= damage;
         if (hp<=0)
         {
             //Destroy(gameObject);
             pool_ref.GetPool().Deactivate(gameObject);
+            Instantiate(death, tran.position, Quaternion.identity);
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Character
 {
+    //public Transform shot_spawn;
+    public GameObject flying_bottle;
     public SpriteRenderer sprite_rend;
     public static Player player;
     //public Vector2 hit_zone;
@@ -56,14 +58,80 @@ public class Player : Character
 
     void Attack1()
     {
+        switch (current_bottle.abil[0].enemy_type)
+        {
+            case EnemyType.None:
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+                //print(hit.collider);
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+                }
+                
+                break;
 
+            case EnemyType.Simple:
+
+                break;
+
+            case EnemyType.Bomber:
+
+                break;
+        }
     }
 
     void Attack2()
     {
+        switch (current_bottle.abil[1].enemy_type)
+        {
+            case EnemyType.None:
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 100.0f, enemy_mask);
+                ////print(hit.collider);
+                //if (hit.collider != null)
+                //{
+                //    BottleHandler.b.AddBottle(hit.collider.gameObject.GetComponent<Character>().char_data.bottle_data);
+                //    hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
 
+                //    //hit.collider.gameObject.GetComponent<Character>().type
+                //}
+                Instantiate(flying_bottle, tran.position, tran.rotation);
+
+                break;
+
+            case EnemyType.Simple:
+
+                break;
+
+            case EnemyType.Bomber:
+
+                break;
+        }
     }
 
+    //void Attack3()
+    //{
+    //    switch (current_bottle.abil[1].enemy_type)
+    //    {
+    //        case EnemyType.None:
+    //            StartCoroutine(Sprint());
+
+    //            break;
+
+    //        case EnemyType.Simple:
+
+    //            break;
+
+    //        case EnemyType.Bomber:
+
+    //            break;
+    //    }
+    //}
+    IEnumerator Sprint()
+    {
+        speed += 2.0f;
+        yield return new WaitForSeconds(3.0f);
+        speed -= 2.0f;
+    }
     void GetMouseInput()
     {
         Vector3 mousePosition = Input.mousePosition;
@@ -72,31 +140,22 @@ public class Player : Character
 
         if ((Input.GetMouseButtonDown(0))&&(!reload_1))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
-            //print(hit.collider);
-            if (hit.collider != null)
-            {
-                hit.collider.gameObject.GetComponent<Character>().GetHit(1);
-            }
-            StartCoroutine(Reload1(char_data.reload_1));
+            Attack1();
+            StartCoroutine(Reload1(current_bottle.abil[0].cooldown));
         }
 
         if ((Input.GetMouseButtonDown(1))&&(!reload_2))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right,100.0f, enemy_mask);
-            //print(hit.collider);
-            if (hit.collider != null)
-            {
-                BottleHandler.b.AddBottle(hit.collider.gameObject.GetComponent<Character>().char_data.bottle_data);
-                hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
-
-                //hit.collider.gameObject.GetComponent<Character>().type
-            }
-            StartCoroutine(Reload2(char_data.reload_2));
+            Attack2();
+            StartCoroutine(Reload2(current_bottle.abil[1].cooldown));
         }
 
-        if ((Input.GetKeyDown( "left shift")) && (!reload_shift))
+        if ((Input.GetKeyDown("left shift")) && (!reload_shift))
         {
+            StartCoroutine(Sprint());
+            StartCoroutine(ReloadShift(7.0f));
+            //Attack3();
+            //StartCoroutine(ReloadShift(current_bottle.abil[2].cooldown));
 
         }
     }
