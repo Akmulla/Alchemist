@@ -72,6 +72,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   - buildTarget: iPhone
     maxTextureSize: 2048
     textureFormat: -1
@@ -80,6 +81,8 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+=======
+>>>>>>> e439d25c9daf807814a3c0f540d96897ab5f5db1
 =======
 >>>>>>> e439d25c9daf807814a3c0f540d96897ab5f5db1
   - buildTarget: Android
