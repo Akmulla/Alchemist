@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\FlyingBottle.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterBomber.cs" />
+    <Compile Include="Assets\Scripts\Monsters\MonsterShooter.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterSimple.cs" />
     <Compile Include="Assets\Scripts\MoveBullet.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
