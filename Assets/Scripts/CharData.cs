@@ -9,4 +9,5 @@ public class CharData : ScriptableObject
     public float speed_base;
     public float reload_1;
     public float reload_2;
+    public BottleData bottle_data;
 }

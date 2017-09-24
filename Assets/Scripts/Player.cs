@@ -57,7 +57,7 @@ public class Player : Character
             //print(hit.collider);
             if (hit.collider != null)
             {
-                BottleHandler.b.GetInBottle(hit.collider.gameObject.GetComponent<Character>().type);
+                BottleHandler.b.AddBottle(hit.collider.gameObject.GetComponent<Character>().char_data.bottle_data);
                 hit.collider.gameObject.GetComponent<Character>().GetHit(1000);
 
                 //hit.collider.gameObject.GetComponent<Character>().type
@@ -71,6 +71,10 @@ public class Player : Character
         }
     }
 
+    public bool CheckIfDefault()
+    {
+        return true;
+    }
 
     public override void GetHit(int damage)
     {

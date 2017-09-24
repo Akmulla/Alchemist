@@ -12,7 +12,7 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
         //else if (eventData.button == PointerEventData.InputButton.Middle)
         //    Debug.Log("Middle click");
         if ((eventData.button == PointerEventData.InputButton.Right)&&(Player.player.CheckIfDefault()))
-            UIController.ui.DrinkBottle(GetComponent<Bottle>().bottle);
+            UIController.ui.DrinkBottle(GetComponent<Bottle>().bottle_data);
             //Debug.Log("Right click");
     }
 }

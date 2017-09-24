@@ -14,4 +14,5 @@ MonoBehaviour:
   hp_base: 5
   speed_base: 3
   reload_1: 0.8
-  reload_2: 30
+  reload_2: 1
+  bottle_data: {fileID: 0}

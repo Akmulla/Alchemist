@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 22227648}
   - component: {fileID: 11437194}
   - component: {fileID: 11440904}
+  - component: {fileID: 114329323102014492}
+  - component: {fileID: 114514926660175912}
   m_Layer: 5
   m_Name: bottle
   m_TagString: Untagged
@@ -91,3 +93,27 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122268}
   m_IsPrefabParent: 1
+--- !u!114 &114329323102014492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dd0c3dd52e8fb489330af864c87900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114514926660175912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1540eaf17907b3941a0b61fbd54965fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  image: {fileID: 11437194}
