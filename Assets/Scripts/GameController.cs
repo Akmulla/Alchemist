@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public static GameController gc;
     GameState game_state=GameState.Game;
     float saved_time_scale = 1.0f;
+    //public int enemy_spawned;
+    public int enemy_killed;
 
     public GameState State
     {

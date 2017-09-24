@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct Levels
+{
+
+}
 public class SpawnWaves : MonoBehaviour
 {
     [HideInInspector]
@@ -24,6 +28,7 @@ public class SpawnWaves : MonoBehaviour
                 Vector3 pos = spawn_point[Random.Range(0, spawn_point.Length)].position;
 
                 pool[pool_ind].Activate(pos, Quaternion.identity);
+                //GameController.gc.enemy_spawned++;
             }
             yield return new WaitForSeconds(delay);
         }

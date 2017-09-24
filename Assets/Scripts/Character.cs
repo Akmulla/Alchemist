@@ -67,6 +67,7 @@ public class Character : MonoBehaviour
             //Destroy(gameObject);
             pool_ref.GetPool().Deactivate(gameObject);
             Instantiate(death, tran.position, Quaternion.identity);
+            GameController.gc.enemy_killed++;
         }
     }
 }
