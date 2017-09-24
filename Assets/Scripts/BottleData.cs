@@ -18,4 +18,5 @@ public class BottleData : ScriptableObject
     public Sprite bottle_sprite;
     public Ability[] abil;
     public Sprite char_sprite;
+    public float speed;
 }

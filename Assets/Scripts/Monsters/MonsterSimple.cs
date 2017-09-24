@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MonsterSimple : Character
 {
+    public GameObject sayan;
+
     protected override void OnEnable()
     {
         base.OnEnable();
+        sayan.SetActive(false);
         StartCoroutine(SpeedCor());
     }
 
@@ -25,10 +28,18 @@ public class MonsterSimple : Character
         Move(movement);
 	}
 
+    IEnumerator Sayan()
+    {
+        sayan.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        sayan.SetActive(false);
+    }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if ((coll.gameObject.tag == "Player")&&(!reload_1))
         {
+            StartCoroutine(Sayan());
             coll.gameObject.GetComponent<Character>().GetHit(1);
             StartCoroutine(Reload1(char_data.reload_1));
             //Destroy(gameObject);

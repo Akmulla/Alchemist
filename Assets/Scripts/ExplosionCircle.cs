@@ -13,7 +13,7 @@ public class ExplosionCircle : MonoBehaviour
 	
     IEnumerator DestroyCor()
     {
-         Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 1.14f, mask);
+         Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 1.69f, mask);
         for (int i = 0; i < coll.Length; i++)
         {
             coll[i].gameObject.GetComponent<Character>().GetHit(1);

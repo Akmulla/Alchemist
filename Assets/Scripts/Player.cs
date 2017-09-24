@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : Character
 {
+    public GameObject sayan;
     public GameObject explosion_circle_player;
     public Animator anim;
     //public Transform shot_spawn;
@@ -15,6 +16,7 @@ public class Player : Character
     bool reload_shift=false;
     public BottleData current_bottle;
     public BottleData player_bottle;
+    List<Ability> passive_abil;
 
     protected IEnumerator ReloadShift(float delay)
     {
@@ -27,7 +29,7 @@ public class Player : Character
     {
         base.Awake();
         player = this;
-        
+        passive_abil = new List<Ability>();
     }
     protected override void Start()
     {
@@ -39,9 +41,20 @@ public class Player : Character
     {
         current_bottle = bottle;
         sprite_rend.sprite = bottle.char_sprite;
+        speed = bottle.speed;
         if (!CheckIfDefault())
         {
+            hp++;
+            
+            for (int i=0;i<bottle.abil.Length;i++)
+            {
+
+            }
             StartCoroutine(DrinkCor());
+        }
+        else
+        {
+            passive_abil.Clear();
         }
     }
 
@@ -62,27 +75,26 @@ public class Player : Character
 
     void Attack1()
     {
+        RaycastHit2D hit;
         switch (current_bottle.abil[0].enemy_type)
         {
             case EnemyType.None:
                 anim.SetTrigger("Attack");
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
-                //print(hit.collider);
-                if (hit.collider != null)
-                {
-                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
-                }
+                StartCoroutine(Sword());
                 
                 break;
 
             case EnemyType.Simple:
                 //anim.SetTrigger("Attack");
-                hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
-                //print(hit.collider);
-                if (hit.collider != null)
-                {
-                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
-                }
+                StartCoroutine(Sword());
+
+                ////anim.SetTrigger("Attack");
+                //hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+                ////print(hit.collider);
+                //if (hit.collider != null)
+                //{
+                //    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+                //}
                 break;
 
             case EnemyType.Bomber:
@@ -93,6 +105,20 @@ public class Player : Character
                 BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
                 break;
         }
+    }
+    IEnumerator Sword()
+    {
+
+        //yield return new WaitForSeconds(0.3f);
+        sayan.SetActive(true);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+        //print(hit.collider);
+        if (hit.collider != null)
+        {
+            hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+        }
+        yield return new WaitForSeconds(0.3f);
+        sayan.SetActive(false);
     }
 
     IEnumerator Throw()
@@ -121,17 +147,20 @@ public class Player : Character
                 break;
 
             case EnemyType.Simple:
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
-                //print(hit.collider);
-                if (hit.collider != null)
-                {
-                    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
-                }
+                //anim.SetTrigger("Attack");
+                StartCoroutine(Sword());
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, tran.right, 1.5f, enemy_mask);
+                ////print(hit.collider);
+                //if (hit.collider != null)
+                //{
+                //    hit.collider.gameObject.GetComponent<Character>().GetHit(1);
+                //}
                 break;
 
             case EnemyType.Bomber:
                 Instantiate(explosion_circle_player, tran.position, Quaternion.identity);
                 break;
+
             case EnemyType.Shooter:
                 BulletPool.bp.player_pool.Activate(tran.position, tran.rotation);
                 break;
@@ -221,5 +250,11 @@ public class Player : Character
         float v = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(h, v, 0);
         Move(movement);
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        sayan.SetActive(false);
     }
 }

@@ -570,23 +570,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-        type: 2}
-      propertyPath: death
-      value: 
-      objectReference: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752,
-        type: 2}
-    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-        type: 2}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1207663491}
-    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-        type: 2}
-      propertyPath: explosion_circle_player
-      value: 
-      objectReference: {fileID: 1722221758494856, guid: f4740820f124253469e09d1d46392933,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e436969ac65a1043b85290cd5d2e0e5, type: 2}
   m_IsPrefabParent: 0
@@ -1866,7 +1849,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.758898, y: 3.35}
+  m_Offset: {x: 5.758898, y: 2.592278}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1877,7 +1860,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.259914, y: 0.1221199}
+  m_Size: {x: 19.259914, y: 1.637564}
   m_EdgeRadius: 0
 --- !u!1 &747021392
 GameObject:
@@ -3014,11 +2997,6 @@ MonoBehaviour:
   bottle_data: {fileID: 0}
   code: 49
   sprite_rend: {fileID: 1003363616}
---- !u!95 &1207663491 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95628383171992090, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 274612288}
 --- !u!1 &1303549732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,6 +5924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ea047ee8adf7f4a9c473717a501ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  new_bottle_sprite: {fileID: 21300000, guid: e949fe3f87ed9fa4b809c445ffc89bc8, type: 3}
   heart:
   - {fileID: 1005377734}
   - {fileID: 650817855}
