@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject[] bottle_cell;
     public GameObject[] mix_cell;
     public GameObject mix_field;
+    public ActionPanelObj[] panel_bottles;
 
 
     void Awake ()
@@ -136,6 +137,11 @@ public class UIController : MonoBehaviour
         {
             GameObject new_bottle = Instantiate(bottle_prefab);
             new_bottle.GetComponent<Bottle>().InitBottle(bottles[i]);
+            if (i<panel_bottles.Length)
+            {
+                panel_bottles[i].InitPanelObj(bottles[i]);
+            }
+            
             bottle_cell[i].GetComponent<DragAndDropCell>().PlaceItem(new_bottle);
         }
     }
