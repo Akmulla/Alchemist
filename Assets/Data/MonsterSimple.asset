@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_base: 1
   speed_base: 1
-  reload_1: 0
+  reload_1: 0.5
   reload_2: 0
   bottle_data: {fileID: 11400000, guid: 1a6d5575cf4b23a4f9b552ed8a74e79e, type: 2}

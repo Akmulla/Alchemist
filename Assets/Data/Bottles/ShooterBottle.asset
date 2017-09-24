@@ -22,4 +22,4 @@ MonoBehaviour:
   - ability_type: 0
     cooldown: 0
     enemy_type: 1
-  char_sprite: {fileID: 21300000, guid: 167b6d759cba1420086ee712a0b90df1, type: 3}
+  char_sprite: {fileID: 21300000, guid: f6063227900719c4d90fd4f9374c5d56, type: 3}
