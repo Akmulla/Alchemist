@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2006,6 +2006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902812556}
   - component: {fileID: 902812555}
+  - component: {fileID: 902812557}
   m_Layer: 0
   m_Name: panel_item_bg (4)
   m_TagString: Untagged
@@ -2066,8 +2067,22 @@ Transform:
   m_LocalScale: {x: 0.51303625, y: 0.4533616, z: 0.4533616}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902812557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902812554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44842f64bff5eb4b80ff2c87e5361c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  code: 50
+  sprite_rend: {fileID: 902812555}
 --- !u!4 &965915626 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4364112328644102, guid: 54f1c4e190dcb0441ac6d9751eebb1eb,
@@ -2404,6 +2419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181261121}
   - component: {fileID: 1181261120}
+  - component: {fileID: 1181261122}
   m_Layer: 0
   m_Name: panel_item_bg (5)
   m_TagString: Untagged
@@ -2464,8 +2480,22 @@ Transform:
   m_LocalScale: {x: 0.51303625, y: 0.4533616, z: 0.4533616}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1181261122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1181261119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44842f64bff5eb4b80ff2c87e5361c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  code: 49
+  sprite_rend: {fileID: 1181261120}
 --- !u!1 &1303549732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +2748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488460205}
   - component: {fileID: 1488460204}
+  - component: {fileID: 1488460206}
   m_Layer: 0
   m_Name: panel_item_bg (3)
   m_TagString: Untagged
@@ -2780,6 +2811,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488460206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488460203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44842f64bff5eb4b80ff2c87e5361c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  code: 51
+  sprite_rend: {fileID: 1488460204}
 --- !u!1001 &1494634010
 Prefab:
   m_ObjectHideFlags: 0
@@ -3709,7 +3754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1393235297164574, guid: 73970b713f8fe524d8cbc1d3a09ee34c, type: 2}
-  size: 10
+  size: 20
 --- !u!114 &1634326712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3722,7 +3767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1857148053145136, guid: e85d0b0a213bb404094faa92bc670c74, type: 2}
-  size: 10
+  size: 20
 --- !u!1001 &1665819842
 Prefab:
   m_ObjectHideFlags: 0
@@ -3819,6 +3864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1678123855}
   - component: {fileID: 1678123854}
+  - component: {fileID: 1678123856}
   m_Layer: 0
   m_Name: panel_item_bg (2)
   m_TagString: Untagged
@@ -3879,8 +3925,22 @@ Transform:
   m_LocalScale: {x: 0.51303625, y: 0.4533616, z: 0.4533616}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678123856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678123853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44842f64bff5eb4b80ff2c87e5361c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  code: 52
+  sprite_rend: {fileID: 1678123854}
 --- !u!1 &1709304128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,6 +4021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1711655833}
   - component: {fileID: 1711655832}
+  - component: {fileID: 1711655834}
   m_Layer: 0
   m_Name: panel_item_bg (1)
   m_TagString: Untagged
@@ -4021,8 +4082,22 @@ Transform:
   m_LocalScale: {x: 0.51303625, y: 0.4533616, z: 0.4533616}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1711655834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1711655831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44842f64bff5eb4b80ff2c87e5361c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottle_data: {fileID: 0}
+  code: 0
+  sprite_rend: {fileID: 0}
 --- !u!1001 &1747814062
 Prefab:
   m_ObjectHideFlags: 0
@@ -5064,6 +5139,11 @@ MonoBehaviour:
   - {fileID: 1017689940}
   - {fileID: 407839271}
   mix_field: {fileID: 1616188507}
+  panel_bottles:
+  - {fileID: 1181261122}
+  - {fileID: 902812557}
+  - {fileID: 1488460206}
+  - {fileID: 1678123856}
 --- !u!1 &2040046402
 GameObject:
   m_ObjectHideFlags: 0

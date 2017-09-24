@@ -35,6 +35,13 @@ public class UIController : MonoBehaviour
         {
             mix_cell[i].GetComponent<DragAndDropCell>().RemoveItem();
         }
+
+        for (int i = 0; i < panel_bottles.Length; i++)
+        {
+
+            panel_bottles[i].Clear();
+            
+        }
     }
 
     public void UpdateHearts(int hp)
@@ -128,6 +135,19 @@ public class UIController : MonoBehaviour
         }
         
     }
+
+    public void InitPanelObj()
+    {
+        List<BottleData> bottles = BottleHandler.b.GetBottles();
+        for (int i = 0; i < bottles.Count; i++)
+        {
+            if (i < panel_bottles.Length)
+            {
+                panel_bottles[i].InitPanelObj(bottles[i]);
+            }
+        }
+    }
+
 
     void SetBottles()
     {
