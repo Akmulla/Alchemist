@@ -9,17 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48e978bdc2becb24cb5ccf710099aff3, type: 3}
-  m_Name: SimpleBottle
+  m_Name: BomberBottle
   m_EditorClassIdentifier: 
-  bottle_sprite: {fileID: 21300000, guid: ed0caf929ba99944c9372cb03771af4f, type: 3}
+  bottle_sprite: {fileID: 21300000, guid: fd9cded77e93a9244be24dc243e32a83, type: 3}
   abil:
   - ability_type: 1
-    cooldown: 0
-    enemy_type: 1
+    enemy_type: 2
   - ability_type: 2
-    cooldown: 0
-    enemy_type: 1
+    enemy_type: 2
   - ability_type: 0
-    cooldown: 0
-    enemy_type: 1
-  char_sprite: {fileID: 21300000, guid: 2f86c6e7a1e09a942ade5c209a26a111, type: 3}
+    enemy_type: 2
+  char_sprite: {fileID: 21300000, guid: 32fc9e62804e3c34fa1214ec4249c55f, type: 3}

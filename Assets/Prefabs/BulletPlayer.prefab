@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdc5ba618b6e0f4b953601f31ab26bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool_ref: {fileID: 114900192895189320}
   target: Enemy
 --- !u!114 &114900192895189320
 MonoBehaviour:

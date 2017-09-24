@@ -576,11 +576,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1920585432232792, guid: db104e4dc5126344f813fb03ce2dd752,
         type: 2}
-    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-        type: 2}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1874284661}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e436969ac65a1043b85290cd5d2e0e5, type: 2}
   m_IsPrefabParent: 0
@@ -1541,7 +1536,7 @@ GameObject:
   - component: {fileID: 725099463}
   m_Layer: 0
   m_Name: boundary
-  m_TagString: Boundary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2617,7 +2612,6 @@ MonoBehaviour:
   spawn_point:
   - {fileID: 168909759}
   - {fileID: 965915626}
-  spawn_delay: 3
 --- !u!1 &1181261119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,11 +4972,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74,
     type: 2}
   m_PrefabInternal: {fileID: 1852721893}
---- !u!95 &1874284661 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95628383171992090, guid: 8e436969ac65a1043b85290cd5d2e0e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 274612288}
 --- !u!1 &1943535893
 GameObject:
   m_ObjectHideFlags: 0

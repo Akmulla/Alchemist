@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdc5ba618b6e0f4b953601f31ab26bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool_ref: {fileID: 114531577078826758}
   target: Player
 --- !u!114 &114531577078826758
 MonoBehaviour:
