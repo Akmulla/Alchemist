@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -581,6 +581,12 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1207663491}
+    - target: {fileID: 114711414903205874, guid: 8e436969ac65a1043b85290cd5d2e0e5,
+        type: 2}
+      propertyPath: explosion_circle_player
+      value: 
+      objectReference: {fileID: 1722221758494856, guid: f4740820f124253469e09d1d46392933,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e436969ac65a1043b85290cd5d2e0e5, type: 2}
   m_IsPrefabParent: 0
@@ -1670,7 +1676,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 280
+      value: 568.35
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -2920,7 +2926,7 @@ MonoBehaviour:
   spawn_point:
   - {fileID: 168909759}
   - {fileID: 965915626}
-  spawn_delay: 0
+  spawn_delay: 2
 --- !u!1 &1181261119
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,4 +15,4 @@ MonoBehaviour:
   speed_base: 1.5
   reload_1: 0
   reload_2: 0
-  bottle_data: {fileID: 11400000, guid: 5397b1d4ca8338b43bda18767cf4ae7f, type: 2}
+  bottle_data: {fileID: 11400000, guid: 25e11e49f24498a468a5619794b7d054, type: 2}
